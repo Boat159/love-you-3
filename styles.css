@@ -1,0 +1,335 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(45deg, #f43695, #00a9fe, #00f7ff , #8300fe , #ffffff );
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.hero, .thank-you, .love-letter, .slideshow {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.hero {
+    display: flex;
+}
+
+.thank-you, .love-letter, .slideshow {
+    background: radial-gradient(circle, rgba(255, 102, 179, 0.8), rgba(255, 51, 153, 0.5));
+    animation: pulseBG 4s ease infinite;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+}
+
+.title, .thank-title, .letter-title {
+    font-size: 5vw;
+    margin: 0;
+    animation: bounceIn 2s ease-out;
+}
+
+.thank-title, .letter-title {
+    font-size: 4vw;
+    text-shadow: 0 0 10px #ff3399, 0 0 20px #ff66b3;
+}
+
+.subtitle, .thank-subtitle, .letter-text {
+    font-size: 2vw;
+    margin: 1rem 0;
+    animation: fadeInUp 2.5s ease-out;
+}
+
+.letter-text {
+    font-size: 1.8vw;
+    line-height: 1.6;
+}
+
+.letter-text strong {
+    color: #ff3399;
+    font-size: 1.2em;
+}
+
+.button-container {
+    margin-top: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    font-size: 2vw;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background-color: #ff3399;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.yes-btn {
+    background-color: #ff3399;
+}
+
+.no-btn {
+    background-color: #ff66b3;
+}
+
+.confirm-btn, .next-btn, .confirm-name-btn {
+    background-color: #ff66b3;
+    padding: 0.8rem 2rem;
+    font-size: 1.8vw;
+}
+
+.next-btn {
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.birthday-prompt, .name-prompt {
+    margin-top: 2vh;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #ff3399;
+    text-shadow: none;
+    z-index: 15;
+}
+
+.prompt-text {
+    font-size: 2vw;
+    margin: 0 0 1rem 0;
+}
+
+#birthday-input, #name-input {
+    padding: 0.5rem 1rem;
+    font-size: 1.8vw;
+    border: none;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 1.6vw;
+    margin-top: 1rem;
+}
+
+.message, .countdown, .email-status {
+    margin-top: 1rem;
+    background-color: rgba(255, 51, 153, 0.9);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    font-size: 1.8vw;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeInOut 5s ease-in-out forwards;
+}
+
+.email-status.success {
+    background-color: rgba(51, 204, 51, 0.9);
+}
+
+.email-status.error {
+    background-color: rgba(255, 51, 51, 0.9);
+}
+
+.love-image {
+    margin-top: 2rem;
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 2s ease-out;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide-image.active {
+    opacity: 1;
+}
+
+.slide-caption {
+    margin-top: 1rem;
+    font-size: 2vw;
+    color: white;
+    text-shadow: 0 0 10px #ff3399;
+    background: rgba(255, 51, 153, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.love-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.love-hearts span {
+    content: "♥";
+    position: absolute;
+    font-size: 3vw;
+    color: #ff99cc;
+    animation: floatLove 6s infinite ease-in-out;
+}
+
+.love-hearts span:nth-child(1) { left: 10%; top: 90%; animation-delay: 0s; }
+.love-hearts span:nth-child(2) { left: 30%; top: 80%; animation-delay: 1s; }
+.love-hearts span:nth-child(3) { left: 50%; top: 85%; animation-delay: 2s; }
+.love-hearts span:nth-child(4) { left: 70%; top: 90%; animation-delay: 3s; }
+
+.heart-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.heart-animation::before, .heart-animation::after {
+    content: "♥";
+    position: absolute;
+    font-size: 2vw;
+    color: #ff99cc;
+    animation: float 5s infinite ease-in-out;
+}
+
+.heart-animation::before { left: 20%; top: 80%; }
+.heart-animation::after { left: 70%; top: 60%; animation-delay: 1s; }
+
+/* Animations */
+@keyframes pulseBG {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes floatLove {
+    0% { opacity: 0; transform: translateY(0) scale(0.5); }
+    50% { opacity: 1; transform: translateY(-15vh) scale(1); }
+    100% { opacity: 0; transform: translateY(-30vh) scale(0.5); }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(2vh); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-2vh); }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(5vh); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-10vh); }
+    100% { opacity: 0; transform: translateY(-20vh); }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .title, .thank-title, .letter-title { font-size: 8vw; }
+    .subtitle, .thank-subtitle, .letter-text { font-size: 4vw; }
+    .letter-text { font-size: 3.5vw; }
+    .btn { padding: 1rem 2rem; font-size: 4vw; }
+    .message, .countdown, .email-status, .slide-caption { font-size: 3.5vw; padding: 0.8rem 1.5rem; }
+    .love-hearts span { font-size: 5vw; }
+    .heart-animation::before, .heart-animation::after { font-size: 4vw; }
+    .prompt-text { font-size: 4vw; }
+    #birthday-input, #name-input { font-size: 3.5vw; }
+    .confirm-btn, .next-btn, .confirm-name-btn { font-size: 3.5vw; padding: 0.8rem 1.5rem; }
+    .error-message { font-size: 3vw; }
+    .love-image, .slide-image { max-width: 90%; }
+    .slideshow-container { height: 50vh; }
+}
+
+@media (max-width: 480px) {
+    .title, .thank-title, .letter-title { font-size: 10vw; }
+    .subtitle, .thank-subtitle, .letter-text { font-size: 5vw; }
+    .letter-text { font-size: 4.5vw; }
+    .btn { padding: 0.8rem 1.5rem; font-size: 5vw; }
+    .message, .countdown, .email-status, .slide-caption { font-size: 4.5vw; padding: 0.5rem 1rem; }
+    .prompt-text { font-size: 5vw; }
+    #birthday-input, #name-input { font-size: 4.5vw; }
+    .confirm-btn, .next-btn, .confirm-name-btn { font-size: 4.5vw; padding: 0.5rem 1rem; }
+    .error-message { font-size: 4vw; }
+    .love-image, .slide-image { max-width: 95%; }
+    .slideshow-container { height: 40vh; }
+}
